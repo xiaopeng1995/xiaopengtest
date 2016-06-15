@@ -6,6 +6,6 @@ package com.youneek.demo;
 public class helloworld {
     public static void  main(String[] args){
         int a=100,b=54;
-        System.out.print(a+b);
+        System.out.print(a-b);
     }
 }
