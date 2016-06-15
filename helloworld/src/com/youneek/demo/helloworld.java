@@ -5,7 +5,7 @@ package com.youneek.demo;
  */
 public class helloworld {
     public static void  main(String[] args){
-        int a=0,b=2;
+        int a=0,b=3;
         System.out.print(a+b);
     }
 }
