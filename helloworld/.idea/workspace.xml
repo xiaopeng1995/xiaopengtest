@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/youneek/demo/helloworld.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -685,12 +685,12 @@
       <workItem from="1465958842485" duration="77000" />
       <workItem from="1465960092888" duration="700000" />
       <workItem from="1465961468828" duration="770000" />
-      <workItem from="1465968469065" duration="968000" />
+      <workItem from="1465968469065" duration="1336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9099000" />
+    <option name="totallyTimeSpent" value="9467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1684" height="1026" extended-state="1" />
@@ -821,7 +821,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/youneek/demo/helloworld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding />
         </state>
       </provider>
