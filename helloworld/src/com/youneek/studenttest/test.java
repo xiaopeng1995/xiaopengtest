@@ -10,9 +10,6 @@ public class test {
         Student s=new Student();
         s.setStudentName("Tom");
         s.setStudentClass("No1");
-        Student s1=new Student();
-        s1.setStudentName("xiaopeng1");
-        s1.setStudentClass("1402");
         System.out.print(s.getStudentName()+s1.getStudentName());
     }
 }
