@@ -1,0 +1,16 @@
+Index: src/testgit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/testgit.java	(revision 6287bc191457ee8a4ffe1e600770b17632b84d54)
++++ src/testgit.java	(revision )
+@@ -4,7 +4,6 @@
+ public class testgit {
+     public static  void main(String[] args)
+     {
+-        System.out.println("xiaopengtestgit");
+-
++        System.out.println("fist idea git progect");
+     }
+ }
