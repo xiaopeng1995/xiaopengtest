@@ -1,0 +1,4 @@
+rootProject.name = 'J1ST-EMULATOR'
+include 'J1st-Mongodb'
+include 'J1st-Demo'
+

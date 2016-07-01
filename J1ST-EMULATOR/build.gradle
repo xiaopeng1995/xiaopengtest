@@ -1,0 +1,60 @@
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    // Group Id
+    group 'j1ST-EMULATOR'
+
+    // Version
+    version '1.0.0-SNAPSHOT'
+
+    // JDK
+    sourceCompatibility = 1.8
+
+    // Encoding
+    tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+
+    // Maven Repository
+    repositories {
+        mavenCentral();
+        mavenLocal();
+        maven { url "https://jitpack.io" }
+    }
+
+    // Dependencies
+    dependencies {
+        // apache commons
+        compile 'org.apache.commons:commons-lang3:3.4'
+        compile 'commons-configuration:commons-configuration:1.10'
+
+        // logger
+        compile 'org.slf4j:slf4j-api:1.7.13'
+        compile 'ch.qos.logback:logback-core:1.1.3'
+        compile 'ch.qos.logback:logback-classic:1.1.3'
+
+        // junit
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.assertj:assertj-core:3.3.0'
+
+        // mock
+        testCompile 'org.mockito:mockito-all:1.10.19'
+        testCompile 'org.easymock:easymock:3.4'
+
+        // joda-time
+        compile 'joda-time:joda-time:2.9.2'
+
+        // jackson
+        compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
+
+        // commons-codec
+        compile 'commons-codec:commons-codec:1.10'
+
+        // quartz
+        compile "org.quartz-scheduler:quartz:2.2.3"
+        compile "org.quartz-scheduler:quartz-jobs:2.2.3"
+
+
+    }
+}

@@ -1,0 +1,8 @@
+
+1.修改配置文件中的product.properties,设置product_id为自己的
+
+2.运行AgentEmulator main方法
+
+3.本地调试需要Edit Configurations,添加参数
+
+4.修改quartz.properties,scheduler.cron设置上发时间周期，cron表达式，具体详见cron表达式文档
