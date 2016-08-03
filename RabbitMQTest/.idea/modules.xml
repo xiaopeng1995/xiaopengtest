@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RabbitMQTest.iml" filepath="$PROJECT_DIR$/.idea/modules/RabbitMQTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RabbitMQTest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RabbitMQTest_main.iml" group="RabbitMQTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RabbitMQTest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RabbitMQTest_test.iml" group="RabbitMQTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_main.iml" group="sms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sms/sms_test.iml" group="sms" />
+    </modules>
+  </component>
+</project>
