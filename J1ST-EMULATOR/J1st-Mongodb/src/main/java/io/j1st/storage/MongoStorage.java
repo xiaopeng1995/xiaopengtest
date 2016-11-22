@@ -992,6 +992,7 @@ public class MongoStorage {
      */
     public void addGenData(GenData genData) {
         Document d = new Document();
+        d.append("state",genData.getState());
         d.append("time", genData.getTime());
         d.append("pVPower", genData.getpVPower());
         d.append("eToday", genData.geteToday());
@@ -1005,7 +1006,7 @@ public class MongoStorage {
         d.append("meterG", genData.getMeterG());
         d.append("powerT", genData.getPowerT());
         d.append("meterT", genData.getMeterT());
-        this.database.getCollection("genData").insertOne(d);
+        this.database.getCollection("emulator_datas").insertOne(d);
     }
 
     /**
@@ -1013,8 +1014,8 @@ public class MongoStorage {
      * @param time
      * @return genData
      */
-    public Document findGendDataBytime(String time) {
-        Document genData = this.database.getCollection("genData").find(new Document("time", time)).first();
+    public Document findGendDataBytime(String time,int state) {
+        Document genData = this.database.getCollection("emulator_datas").find(and(eq("time", time), eq("state", state))).first();
         return genData;
     }
 

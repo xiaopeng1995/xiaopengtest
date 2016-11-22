@@ -63,9 +63,10 @@ public class GenDataAddUtil extends AbstractResource {
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(@QueryParam("time") @DefaultValue("201611180750") String time) {
+    public ResultEntity findGendDataBytime(@QueryParam("time") @DefaultValue("201611180750") String time,
+                                           @QueryParam("state") @DefaultValue("0") int state) {
 
-        return new ResultEntity<>(mongo.findGendDataBytime(time));
+        return new ResultEntity<>(mongo.findGendDataBytime(time,state));
     }
 
     @Path("/delete")

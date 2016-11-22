@@ -6,6 +6,7 @@ import java.util.Date;
  * GenData类型
  */
 public class GenData {
+    private int state;
     private String time;
     private Double pVPower;
     private Double eToday;
@@ -123,5 +124,13 @@ public class GenData {
 
     public void setPowerG(Double powerG) {
         this.powerG = powerG;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }
