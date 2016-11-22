@@ -45,7 +45,7 @@ public class MqttUpstreamEntity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
         String date = dateFormat.format( now );
         System.out.println(date);
-        Document document = mongoStorage.findGendDataBytime(date);
+        Document document = mongoStorage.findGendDataBytime(date,0);
         map.put("PVPower",document.get("pVPower"));
         map.put("EToday",document.get("eToday"));
         map.put("Car1P",document.get("car1P"));
