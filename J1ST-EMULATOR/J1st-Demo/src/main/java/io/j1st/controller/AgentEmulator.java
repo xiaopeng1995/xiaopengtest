@@ -1,5 +1,6 @@
 package io.j1st.controller;
 
+import io.j1st.controller.entity.MqttUpstreamEntity;
 import io.j1st.controller.mqtt.MqttConnThread;
 import io.j1st.controller.entity.Registry;
 import io.j1st.controller.quartz.UpstreamJob;
@@ -63,6 +64,7 @@ public class AgentEmulator {
         //mongodb
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
+        MqttUpstreamEntity mqttUpstreamEntity = new MqttUpstreamEntity(mogo);
         List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
 
         // Mqtt

@@ -28,16 +28,16 @@ public class GenDataAddUtil extends AbstractResource {
         super(mongo, dataMongoStorage);
     }
 
-    @GET
-    public ResultEntity getticket(@QueryParam("username") Optional<String> username) {
-        logger.debug("进入GET: ticket");
-        Map<String, String> r = new HashMap<>();
-        if (username.isPresent())
-            r.put("username", username.get());
-        else
-            r.put("username", "不存在");
-        return new ResultEntity<>(r);
-    }
+//    @GET
+//    public ResultEntity getticket(@QueryParam("username") Optional<String> username) {
+//        logger.debug("进入GET: ticket");
+//        Map<String, String> r = new HashMap<>();
+//        if (username.isPresent())
+//            r.put("username", username.get());
+//        else
+//            r.put("username", "不存在");
+//        return new ResultEntity<>(r);
+//    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

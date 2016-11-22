@@ -1,9 +1,14 @@
 package io.j1st.controller.entity;
 
+import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.DeviceType;
+import io.j1st.storage.entity.GenData;
 import io.j1st.storage.entity.Stream;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.bson.Document;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -11,12 +16,18 @@ import java.util.*;
  */
 public class MqttUpstreamEntity {
 
+    private static MongoStorage mongoStorage;
+
+    public MqttUpstreamEntity(MongoStorage mongoStorage){
+        this.mongoStorage=mongoStorage;
+    }
+
     // upstream object
     public static List<Stream> getInstance(String agentId){
         List<Stream> streams=new ArrayList<>();
         streams.add(getAgentStream(agentId));
         //update device
-        streams.add(getDeviceStream(agentId));
+        //streams.add(getDeviceStream(agentId));
         //insert device
         //streams.add(getDeviceStream());
         return streams;
@@ -25,17 +36,28 @@ public class MqttUpstreamEntity {
     // agent stream
     public static Stream getAgentStream(String agentId){
         Stream agentStreams=new Stream();
-        //agentStreams.setHwid(agentId);
+//        //agentStreams.setHwid(agentId);
         agentStreams.setType(DeviceType.AGENT);
         agentStreams.setModel("Omnik_one");
+        agentStreams.setDsn(agentId);
         Map<String,Object> map=new HashMap<>();
-        map.put("interval",300);
-        map.put("mod","IUNI N1");
-        map.put("Manufacturer","ZenInfo Co.");
-        map.put("PtVer","Omnik_V1.1.1");
-        map.put("Interval4modbus",10);
-        map.put("ConfigTs", 1464676561758L);
-        map.put("FreeSpace", 712);
+        Date now = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
+        String date = dateFormat.format( now );
+        System.out.println(date);
+        Document document = mongoStorage.findGendDataBytime(date);
+        map.put("PVPower",document.get("pVPower"));
+        map.put("EToday",document.get("eToday"));
+        map.put("Car1P",document.get("car1P"));
+        map.put("Car1SOC",document.get("car1SOC"));
+        map.put("Car2P",document.get("car2P"));
+        map.put("Car2SOC",document.get("car2SOC"));
+        map.put("BatP", document.get("batP"));
+        map.put("BatSOC", document.get("batSOC"));
+        map.put("PowerG", document.get("powerG"));
+        map.put("MeterG", document.get("meterG"));
+        map.put("PowerT", document.get("powerT"));
+        map.put("MeterT", document.get("meterT"));
         agentStreams.setValues(map);
         return agentStreams;
     }
@@ -62,5 +84,15 @@ public class MqttUpstreamEntity {
         deviceStreams.setValues(map);
         return deviceStreams;
     }
+
+
+    public MongoStorage getMongoStorage() {
+        return mongoStorage;
+    }
+
+    public void setMongoStorage(MongoStorage mongoStorage) {
+        this.mongoStorage = mongoStorage;
+    }
+
 
 }
