@@ -1,6 +1,7 @@
 package io.j1st.controller.mqtt;
 
 
+import io.j1st.controller.entity.Registry;
 import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,7 @@ public class MqttConnThread implements Callable{
         try{
             // connect mqtt broker
             mqttClient.connect(options);
+
             //判断客户端是否连接上
             if(mqttClient.isConnected()){
                 mqttClient.setCallback(new MqttCallback() {
@@ -45,7 +47,7 @@ public class MqttConnThread implements Callable{
 
                     @Override
                     public void messageArrived(String topic, MqttMessage message) throws Exception {
-
+                        logger.debug("收到的消息为："+message.toString());
                     }
 
                     @Override
@@ -53,6 +55,8 @@ public class MqttConnThread implements Callable{
 
                     }
                 });
+                String topic="agents/"+mqttClient.getClientId()+"/downstream";
+                mqttClient.subscribe(topic);
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         }catch(Exception e){

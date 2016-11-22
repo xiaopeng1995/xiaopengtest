@@ -5,7 +5,11 @@ package io.j1st.storage.entity;
  */
 public enum UserRole {
     DEVELOPER(1),
-    PLAYER(2);
+    PLAYER(2),
+    INSTALLER(3),
+    OPERATOR(4),
+    OWNER(5);
+
 
     private final int value;
 

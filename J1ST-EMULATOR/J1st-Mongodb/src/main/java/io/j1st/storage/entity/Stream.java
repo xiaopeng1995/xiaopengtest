@@ -7,16 +7,27 @@ import java.util.Map;
  */
 public class Stream {
 
-    private String hwid;
+    private String asn;
+    private String dsn;
     private DeviceType type;
+    private long dtime;
+    private String model;
     private Map<String ,Object> values;
 
-    public String getHwid() {
-        return hwid;
+    public String getAsn() {
+        return asn;
     }
 
-    public void setHwid(String hwid) {
-        this.hwid = hwid;
+    public void setAsn(String asn) {
+        this.asn = asn;
+    }
+
+    public String getDsn() {
+        return dsn;
+    }
+
+    public void setDsn(String dsn) {
+        this.dsn = dsn;
     }
 
     public DeviceType getType() {
@@ -27,11 +38,27 @@ public class Stream {
         this.type = type;
     }
 
-    public Map<String ,Object> getValues() {
+    public long getDtime() {
+        return dtime;
+    }
+
+    public void setDtime(long dtime) {
+        this.dtime = dtime;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public Map<String, Object> getValues() {
         return values;
     }
 
-    public void setValues(Map values) {
+    public void setValues(Map<String, Object> values) {
         this.values = values;
     }
 }

@@ -1,4 +1,6 @@
-package io.j1st.controller.mqtt;
+package io.j1st.controller.entity;
+
+import io.j1st.controller.mqtt.MqttConnThread;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,7 +19,7 @@ public enum Registry {
     public Map<String,MqttConnThread> map=new ConcurrentHashMap<>();
 
     // connect pool
-    private final ExecutorService es= Executors.newFixedThreadPool(10000);
+    private final ExecutorService es= Executors.newFixedThreadPool(5000);
 
     // save session
     public void saveSession(String agentId,MqttConnThread client){

@@ -44,6 +44,9 @@ public class MongoStorage {
     protected MongoDatabase database;
 
     public void init(AbstractConfiguration config) {
+
+        MongoClientOptions options = MongoClientOptions.builder().build();
+
         // MongoClient
         List<ServerAddress> addresses = parseAddresses(config.getString("mongo.address"));
         List<MongoCredential> credentials = parseCredentials(
@@ -104,6 +107,7 @@ public class MongoStorage {
 
     private List<MongoCredential> parseCredentials(String userName, String database, String password) {
         List<MongoCredential> result = new ArrayList<>();
+        //MongoCredential类的createCredential方法可以指定认证的用户名，密码，以及使用的数据库，并返回一个MongoCredential对象
         result.add(MongoCredential.createCredential(userName, database, password.toCharArray()));
         return result;
     }
@@ -377,7 +381,7 @@ public class MongoStorage {
     }
 
     /**
-     * 获取 Token，根据 手机
+     * 获取 Token，根据 手机 用户角色
      *
      * @param mobile 手机
      * @param role   用户角色
@@ -403,12 +407,15 @@ public class MongoStorage {
                 .find(eq("mail", mail))
                 .projection(include("token"))
                 .first();
-        if (d != null) return d.getString("token");
-        else return null;
+        if (d != null) {
+            String token = "Token:" + d.getString("token");
+            System.out.println("ttt" + token);
+            return token;
+        } else return null;
     }
 
     /**
-     * 获取 Token，根据 邮箱
+     * 获取 Token，根据 邮箱 用户角色
      *
      * @param mail 邮箱
      * @param role 用户角色
@@ -505,6 +512,51 @@ public class MongoStorage {
         u.setUpdatedAt(d.getDate("updated_at"));
         return u;
     }
+
+    /**
+     * 删除用户相关的所有信息
+     */
+    public String deleteBasicInfo(String userName, int role) {
+        //获取用户
+        Document document = this.database.getCollection("users").find(and(eq("name", userName), eq("role", role))).first();
+
+        long deviceCount = 0, agentCount = 0, productCount = 0, logCount = 0, userCount = 0;
+        if (document != null) {
+            User user = parseUserDocument(document);
+
+            if (user != null) {
+                //获取product id
+                List<Product> r = new ArrayList<>();
+                this.database.getCollection("products").find(eq("user_id", user.getId())).forEach((Consumer<Document>) d ->
+                        r.add(parseProductDocument(d)));
+
+                List<ObjectId> obids = new ArrayList<>();
+                for (Product aR : r) {
+                    obids.add(aR.getId());
+                }
+
+                //删除device info
+                deviceCount = this.database.getCollection("devices").deleteMany(in("product_id", obids)).getDeletedCount();
+
+                //删除agent info
+                agentCount = this.database.getCollection("agents").deleteMany(in("product_id", obids)).getDeletedCount();
+
+                //删除product info
+                productCount = this.database.getCollection("products").deleteMany(in("_id", obids)).getDeletedCount();
+
+                //删除日志信息
+                logCount = this.database.getCollection("event_logs").deleteMany(in("product_id", obids)).getDeletedCount();
+
+                //删除用户信息
+                userCount = this.database.getCollection("users").deleteMany(and(eq("name", userName), eq("role", role))).getDeletedCount();
+
+            }
+        }
+        return "成功删除: " + deviceCount + " 条device数据 " + agentCount + " 条agent数据 " + productCount + " 条product数据 " + logCount + " 条日志数据 " + userCount + " 条用户信息";
+
+    }
+
+
 
     /*===============================================SMS Operations===========================================*/
 
@@ -621,46 +673,6 @@ public class MongoStorage {
         if (ds != null) {
             ProductSettings s = new ProductSettings();
             s.setTimezone(DateTimeZone.forID(ds.getString("timezone")));
-            List<Document> dfs = ds.get("fields", List.class);
-            if (dfs != null) {
-                List<FieldSetting> fields = new ArrayList<>();
-                for (Document df : dfs) {
-                    FieldSetting f = new FieldSetting();
-                    f.setDeviceType(DeviceType.valueOf(df.getInteger("device_type")));
-                    f.setKey(df.getString("key"));
-                    f.setDescription(df.getString("description"));
-                    f.setDataFormat(DataFormat.valueOf(df.getInteger("data_format")));
-                    f.setUnit(df.getString("unit"));
-                    f.setInChart(df.getBoolean("in_chart"));
-                    f.setInList(df.getBoolean("in_list"));
-                    f.setUndefined(df.getBoolean("undefined"));
-                    fields.add(f);
-                }
-                s.setFields(fields);
-            }
-            List<Document> callback = (List<Document>) ds.get("callback");
-            if (callback != null) {
-                List<CallbackSetting> calls = new ArrayList<>();
-                for (Document item : callback) {
-                    CallbackSetting callbackSetting = new CallbackSetting();
-                    callbackSetting.setId(item.getObjectId("id").toString());
-                    callbackSetting.setUrl(item.getString("url"));
-                    callbackSetting.setContentType(item.getString("contentType"));
-                    callbackSetting.setSecret(item.getString("secret"));
-                    callbackSetting.setActive(item.getBoolean("active"));
-                    List<Integer> tts = (List<Integer>) item.get("trigger");
-                    if (tts != null) {
-                        List<TriggerType> types = new ArrayList<>();
-                        for (int i = 0; i < tts.size(); i++) {
-                            types.add(TriggerType.valueOf(tts.get(i)));
-                        }
-                        callbackSetting.setTrigger(types);
-                    }
-
-                    calls.add(callbackSetting);
-                }
-                s.setCallback(calls);
-            }
             p.setSettings(s);
         }
         List<Document> fnButtonDocs = d.get("fnx", List.class);
@@ -833,6 +845,7 @@ public class MongoStorage {
         return r;
     }
 
+
     /**
      * 获取 采集器的分组数据统计，根据产品分组
      *
@@ -970,6 +983,39 @@ public class MongoStorage {
                 .projection(include("_id"))
                 .first() != null;
 
+    }
+
+    /**
+     * 添加GenData数据
+     *
+     * @param genData GenData数据
+     */
+    public void addGenData(GenData genData) {
+        Document d = new Document();
+        d.append("time", genData.getTime());
+        d.append("pVPower", genData.getpVPower());
+        d.append("eToday", genData.geteToday());
+        d.append("car1P", genData.getCar1P());
+        d.append("car1SOC", genData.getCar1SOC());
+        d.append("car2P", genData.getCar2P());
+        d.append("car2SOC", genData.getCar2SOC());
+        d.append("batP", genData.getBatP());
+        d.append("batSOC", genData.getBatSOC());
+        d.append("powerG", genData.getPowerG());
+        d.append("meterG", genData.getMeterG());
+        d.append("powerT", genData.getPowerT());
+        d.append("meterT", genData.getMeterT());
+        this.database.getCollection("genData").insertOne(d);
+    }
+
+    /**
+     * 通过时间查找对应数据
+     * @param time
+     * @return genData
+     */
+    public Document findGendDataBytime(String time) {
+        Document genData = this.database.getCollection("genData").find(new Document("time", time)).first();
+        return genData;
     }
 
 }

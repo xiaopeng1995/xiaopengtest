@@ -3,7 +3,7 @@ package io.j1st.controller.quartz;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.controller.entity.MqttUpstreamEntity;
 import io.j1st.controller.mqtt.MqttConnThread;
-import io.j1st.controller.mqtt.Registry;
+import io.j1st.controller.entity.Registry;
 import io.j1st.controller.util.JsonUtils;
 import io.j1st.storage.entity.Stream;
 import org.quartz.Job;
@@ -53,7 +53,7 @@ public class UpstreamJob implements Job {
      * @param agentId Agent Id
      */
     public static String getTopic(String agentId) {
-        return "agents/" + agentId + "/upstream";
+        return "agents/"+agentId+"/upstream";
     }
 
 }

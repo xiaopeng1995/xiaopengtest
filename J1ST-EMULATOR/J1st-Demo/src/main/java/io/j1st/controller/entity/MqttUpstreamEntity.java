@@ -15,15 +15,19 @@ public class MqttUpstreamEntity {
     public static List<Stream> getInstance(String agentId){
         List<Stream> streams=new ArrayList<>();
         streams.add(getAgentStream(agentId));
-        streams.add(getDeviceStream());
+        //update device
+        streams.add(getDeviceStream(agentId));
+        //insert device
+        //streams.add(getDeviceStream());
         return streams;
     }
 
     // agent stream
     public static Stream getAgentStream(String agentId){
         Stream agentStreams=new Stream();
-        agentStreams.setHwid(agentId);
+        //agentStreams.setHwid(agentId);
         agentStreams.setType(DeviceType.AGENT);
+        agentStreams.setModel("Omnik_one");
         Map<String,Object> map=new HashMap<>();
         map.put("interval",300);
         map.put("mod","IUNI N1");
@@ -37,15 +41,19 @@ public class MqttUpstreamEntity {
     }
 
     // Device stream
-    public static Stream getDeviceStream(){
+    public static Stream getDeviceStream(String agentId){
         Stream deviceStreams=new Stream();
-        deviceStreams.setHwid(RandomStringUtils.randomAlphabetic(32));
+        // insert device
+        //deviceStreams.setDsn(RandomStringUtils.randomAlphabetic(32));
+        // update device
+        deviceStreams.setDsn(agentId);
         deviceStreams.setType(DeviceType.INVERTER);
         Map<String,Object> map=new HashMap<>();
-        map.put("pac",11);
-        map.put("etoday",1200);
-        map.put("Vpv1",636.9);
-        map.put("Vpv2",639.6);
+        map.put("pac",600);
+        map.put("etoday",Math.incrementExact(2));
+        map.put("etotal",Math.incrementExact(10));
+        map.put("Vpv1",113.9);
+        map.put("Vpv2",116.6);
         map.put("Ipv1",11.33);
         map.put("Ipv2",12.68);
         map.put("InvMode",1);

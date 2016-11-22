@@ -1,0 +1,879 @@
+2016-11-22 08:54:37.277 [main] INFO  o.e.jetty.util.log - Logging initialized @3603ms
+ 2016-11-22 08:54:37.526 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 08:54:37.535 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 08:54:37.553 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 08:54:37.595 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 08:54:37.597 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 08:54:37.613 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 08:54:37.844 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 08:54:37.926 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 08:54:38.229 [cluster-ClusterId{value='5833974d6f6a692690f140a8', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15061}] to 139.196.235.75:27017
+ 2016-11-22 08:54:38.233 [cluster-ClusterId{value='5833974d6f6a692690f140a8', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=3050177}
+ 2016-11-22 08:54:38.292 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15062}] to 139.196.235.75:27017
+ 2016-11-22 08:54:38.401 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 08:54:38.458 [cluster-ClusterId{value='5833974e6f6a692690f140a9', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15063}] to 139.196.235.75:27017
+ 2016-11-22 08:54:38.463 [cluster-ClusterId{value='5833974e6f6a692690f140a9', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=3879045}
+ 2016-11-22 08:54:39.275 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/find (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 08:54:39.277 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 08:54:39.278 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1ff55ff{/,null,AVAILABLE}
+ 2016-11-22 08:54:39.283 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 08:54:39.284 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 08:54:39.289 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@8a98f38{/admin,null,AVAILABLE}
+ 2016-11-22 08:54:39.302 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 08:54:39.302 [main] INFO  o.e.j.server.Server - Started @5630ms
+ 2016-11-22 09:10:11.423 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.GenDataAddUtil - add  io.j1st.storage.entity.GenData@e3c26c8
+ 2016-11-22 09:13:47.179 [main] INFO  o.e.jetty.util.log - Logging initialized @1712ms
+ 2016-11-22 09:13:47.274 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 09:13:47.283 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 09:13:47.299 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 09:13:47.328 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:13:47.330 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 09:13:47.337 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 09:13:47.490 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:13:47.554 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 09:13:47.814 [cluster-ClusterId{value='58339bcb6f6a69139c9bbc5b', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15073}] to 139.196.235.75:27017
+ 2016-11-22 09:13:47.819 [cluster-ClusterId{value='58339bcb6f6a69139c9bbc5b', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=4757989}
+ 2016-11-22 09:13:47.879 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15074}] to 139.196.235.75:27017
+ 2016-11-22 09:13:47.996 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:13:48.055 [cluster-ClusterId{value='58339bcb6f6a69139c9bbc5c', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15075}] to 139.196.235.75:27017
+ 2016-11-22 09:13:48.060 [cluster-ClusterId{value='58339bcb6f6a69139c9bbc5c', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=4418666}
+ 2016-11-22 09:13:48.747 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/find (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 09:13:48.749 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 09:13:48.750 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@351f2244{/,null,AVAILABLE}
+ 2016-11-22 09:13:48.757 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 09:13:48.757 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 09:13:48.762 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@20011bf{/admin,null,AVAILABLE}
+ 2016-11-22 09:13:48.799 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:13:48.800 [main] INFO  o.e.j.server.Server - Started @3335ms
+ 2016-11-22 09:17:09.689 [main] INFO  o.e.jetty.util.log - Logging initialized @1631ms
+ 2016-11-22 09:17:09.782 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 09:17:09.790 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 09:17:09.805 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 09:17:09.833 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:17:09.835 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 09:17:09.842 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 09:17:09.993 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:17:10.053 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 09:17:10.321 [cluster-ClusterId{value='58339c956f6a6917381e6914', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15076}] to 139.196.235.75:27017
+ 2016-11-22 09:17:10.327 [cluster-ClusterId{value='58339c956f6a6917381e6914', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=4925318}
+ 2016-11-22 09:17:10.374 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15077}] to 139.196.235.75:27017
+ 2016-11-22 09:17:10.453 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:17:10.499 [cluster-ClusterId{value='58339c966f6a6917381e6915', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15078}] to 139.196.235.75:27017
+ 2016-11-22 09:17:10.503 [cluster-ClusterId{value='58339c966f6a6917381e6915', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=4013718}
+ 2016-11-22 09:17:11.041 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/find (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 09:17:11.042 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 09:17:11.043 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1ff55ff{/,null,AVAILABLE}
+ 2016-11-22 09:17:11.048 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 09:17:11.048 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 09:17:11.053 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@8a98f38{/admin,null,AVAILABLE}
+ 2016-11-22 09:17:11.070 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:17:11.070 [main] INFO  o.e.j.server.Server - Started @3013ms
+ 2016-11-22 09:20:30.481 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  1.1
+ 2016-11-22 09:21:10.188 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  1.1
+ 2016-11-22 09:22:44.842 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  1.1
+ 2016-11-22 09:29:51.636 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3592.05
+ 2016-11-22 09:29:51.642 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3590.85
+ 2016-11-22 09:29:51.643 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3592.57
+ 2016-11-22 09:29:51.645 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3593.4
+ 2016-11-22 09:29:51.645 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3591.48
+ 2016-11-22 09:29:51.645 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3593.0
+ 2016-11-22 09:29:51.646 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3593.77
+ 2016-11-22 09:29:51.653 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.12
+ 2016-11-22 09:29:51.661 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.48
+ 2016-11-22 09:29:51.675 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.87
+ 2016-11-22 09:29:51.683 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.19
+ 2016-11-22 09:29:51.689 [dw-33 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:15086}] to 139.196.235.75:27017
+ 2016-11-22 09:29:51.691 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.44
+ 2016-11-22 09:29:51.693 [dw-32 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:15084}] to 139.196.235.75:27017
+ 2016-11-22 09:29:51.694 [dw-22 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:15085}] to 139.196.235.75:27017
+ 2016-11-22 09:29:51.696 [dw-31 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:15087}] to 139.196.235.75:27017
+ 2016-11-22 09:29:51.697 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.67
+ 2016-11-22 09:29:51.698 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.89
+ 2016-11-22 09:29:51.700 [dw-36 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:8, serverValue:15088}] to 139.196.235.75:27017
+ 2016-11-22 09:29:51.703 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.11
+ 2016-11-22 09:29:51.706 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.34
+ 2016-11-22 09:29:51.709 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.2
+ 2016-11-22 09:29:51.711 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.47
+ 2016-11-22 09:29:51.711 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.91
+ 2016-11-22 09:29:51.713 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.63
+ 2016-11-22 09:29:51.713 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.75
+ 2016-11-22 09:29:51.719 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.95
+ 2016-11-22 09:29:51.719 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.39
+ 2016-11-22 09:29:51.723 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.13
+ 2016-11-22 09:29:51.723 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.61
+ 2016-11-22 09:29:51.723 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.79
+ 2016-11-22 09:29:51.726 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.96
+ 2016-11-22 09:29:51.729 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.28
+ 2016-11-22 09:29:51.731 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.43
+ 2016-11-22 09:29:51.731 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.12
+ 2016-11-22 09:29:51.733 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.58
+ 2016-11-22 09:29:51.733 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.74
+ 2016-11-22 09:29:51.734 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.88
+ 2016-11-22 09:29:51.737 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.02
+ 2016-11-22 09:29:51.740 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.16
+ 2016-11-22 09:29:51.741 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.3
+ 2016-11-22 09:29:51.741 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.43
+ 2016-11-22 09:29:51.742 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.63
+ 2016-11-22 09:29:51.742 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.81
+ 2016-11-22 09:29:51.745 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.95
+ 2016-11-22 09:29:51.749 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.19
+ 2016-11-22 09:29:51.750 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.43
+ 2016-11-22 09:29:51.750 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.31
+ 2016-11-22 09:29:51.750 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.07
+ 2016-11-22 09:29:51.752 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.54
+ 2016-11-22 09:29:51.753 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.67
+ 2016-11-22 09:29:51.759 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.85
+ 2016-11-22 09:29:51.760 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.01
+ 2016-11-22 09:29:51.760 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.11
+ 2016-11-22 09:29:51.760 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.21
+ 2016-11-22 09:29:51.761 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.3
+ 2016-11-22 09:29:51.761 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.42
+ 2016-11-22 09:29:51.769 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.6
+ 2016-11-22 09:29:51.769 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.93
+ 2016-11-22 09:29:51.769 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.77
+ 2016-11-22 09:29:51.770 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.18
+ 2016-11-22 09:29:51.770 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.01
+ 2016-11-22 09:29:51.770 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.1
+ 2016-11-22 09:29:51.778 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.83
+ 2016-11-22 09:29:51.778 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.28
+ 2016-11-22 09:29:51.778 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.45
+ 2016-11-22 09:29:51.780 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.76
+ 2016-11-22 09:29:51.780 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.61
+ 2016-11-22 09:29:51.781 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.9
+ 2016-11-22 09:29:51.788 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.97
+ 2016-11-22 09:29:51.788 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.08
+ 2016-11-22 09:29:51.789 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.24
+ 2016-11-22 09:29:51.791 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.5
+ 2016-11-22 09:29:51.791 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.38
+ 2016-11-22 09:29:51.793 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.56
+ 2016-11-22 09:29:51.799 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.63
+ 2016-11-22 09:29:51.802 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.63
+ 2016-11-22 09:29:51.802 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.74
+ 2016-11-22 09:29:51.807 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.91
+ 2016-11-22 09:29:51.815 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.04
+ 2016-11-22 09:29:51.819 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.08
+ 2016-11-22 09:29:51.820 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.07
+ 2016-11-22 09:29:51.827 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.09
+ 2016-11-22 09:29:51.829 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.09
+ 2016-11-22 09:29:51.833 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.11
+ 2016-11-22 09:29:51.835 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.09
+ 2016-11-22 09:29:51.840 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.19
+ 2016-11-22 09:29:51.844 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.25
+ 2016-11-22 09:29:51.849 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.28
+ 2016-11-22 09:29:51.852 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.28
+ 2016-11-22 09:29:51.852 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.28
+ 2016-11-22 09:29:51.855 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.3
+ 2016-11-22 09:29:51.859 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.4
+ 2016-11-22 09:29:51.862 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:29:51.864 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.57
+ 2016-11-22 09:29:51.867 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.6
+ 2016-11-22 09:29:51.872 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.68
+ 2016-11-22 09:29:51.882 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.77
+ 2016-11-22 09:29:51.886 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.9
+ 2016-11-22 09:29:51.893 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.99
+ 2016-11-22 09:29:51.895 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:29:51.900 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:29:51.902 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:29:51.907 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.907 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.911 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.915 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.917 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.922 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:29:51.923 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.927 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.932 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.934 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.940 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.941 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:29:51.945 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.946 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.952 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.955 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.956 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.957 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:29:51.963 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.964 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.967 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.979 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.980 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.984 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:29:51.988 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:51.989 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:51.993 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:51.993 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:52.002 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:52.002 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:29:52.004 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.005 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.020 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.023 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.023 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.026 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:29:52.028 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.036 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.037 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.041 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.042 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.042 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:29:52.046 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.16
+ 2016-11-22 09:29:52.049 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.16
+ 2016-11-22 09:29:52.052 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.16
+ 2016-11-22 09:29:52.053 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.16
+ 2016-11-22 09:29:52.056 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.25
+ 2016-11-22 09:29:52.058 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.34
+ 2016-11-22 09:29:52.060 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.41
+ 2016-11-22 09:29:52.063 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.41
+ 2016-11-22 09:29:52.068 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.41
+ 2016-11-22 09:29:52.072 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.41
+ 2016-11-22 09:29:52.073 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.41
+ 2016-11-22 09:29:52.078 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.079 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.080 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.082 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.085 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.087 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.42
+ 2016-11-22 09:29:52.089 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.091 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.092 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.096 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.096 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.102 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.43
+ 2016-11-22 09:29:52.105 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.111 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.114 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.117 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.119 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.121 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:29:52.129 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.141 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.141 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.142 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.144 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.144 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.45
+ 2016-11-22 09:29:52.148 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.151 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.154 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.155 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.157 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.158 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.46
+ 2016-11-22 09:29:52.163 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.166 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.169 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.172 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.174 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.174 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.47
+ 2016-11-22 09:29:52.179 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.183 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.185 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.189 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.193 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.198 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.48
+ 2016-11-22 09:29:52.198 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.49
+ 2016-11-22 09:29:52.199 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.49
+ 2016-11-22 09:29:52.202 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.49
+ 2016-11-22 09:29:52.202 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.49
+ 2016-11-22 09:29:52.207 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.62
+ 2016-11-22 09:29:52.208 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.7
+ 2016-11-22 09:29:52.207 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.53
+ 2016-11-22 09:29:52.209 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.75
+ 2016-11-22 09:29:52.210 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.74
+ 2016-11-22 09:29:52.210 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.74
+ 2016-11-22 09:29:52.213 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.75
+ 2016-11-22 09:29:52.219 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.76
+ 2016-11-22 09:29:52.221 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.76
+ 2016-11-22 09:29:52.222 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.82
+ 2016-11-22 09:29:52.224 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.89
+ 2016-11-22 09:29:52.224 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.96
+ 2016-11-22 09:29:52.227 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.03
+ 2016-11-22 09:29:52.228 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.1
+ 2016-11-22 09:29:52.232 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.17
+ 2016-11-22 09:29:52.236 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.2
+ 2016-11-22 09:29:52.237 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.22
+ 2016-11-22 09:29:52.236 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.2
+ 2016-11-22 09:29:52.241 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.23
+ 2016-11-22 09:29:52.243 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.25
+ 2016-11-22 09:29:52.247 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.28
+ 2016-11-22 09:29:52.253 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.3
+ 2016-11-22 09:29:52.263 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.33
+ 2016-11-22 09:29:52.267 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.36
+ 2016-11-22 09:29:52.267 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.39
+ 2016-11-22 09:29:52.270 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.47
+ 2016-11-22 09:29:52.271 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.63
+ 2016-11-22 09:29:52.273 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.77
+ 2016-11-22 09:29:52.276 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.85
+ 2016-11-22 09:29:52.279 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.88
+ 2016-11-22 09:29:52.281 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.92
+ 2016-11-22 09:29:52.283 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.95
+ 2016-11-22 09:29:52.285 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.98
+ 2016-11-22 09:29:52.289 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.01
+ 2016-11-22 09:29:52.295 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.04
+ 2016-11-22 09:29:52.296 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.07
+ 2016-11-22 09:29:52.298 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.1
+ 2016-11-22 09:29:52.299 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.12
+ 2016-11-22 09:29:52.300 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.15
+ 2016-11-22 09:29:52.304 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.18
+ 2016-11-22 09:29:52.310 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.21
+ 2016-11-22 09:29:52.310 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.23
+ 2016-11-22 09:29:52.313 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.26
+ 2016-11-22 09:29:52.314 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.29
+ 2016-11-22 09:29:52.320 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.32
+ 2016-11-22 09:29:52.323 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.34
+ 2016-11-22 09:29:52.323 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.38
+ 2016-11-22 09:29:52.326 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.41
+ 2016-11-22 09:29:52.327 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.45
+ 2016-11-22 09:29:52.334 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.54
+ 2016-11-22 09:29:52.337 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.65
+ 2016-11-22 09:29:52.340 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.75
+ 2016-11-22 09:29:52.348 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.87
+ 2016-11-22 09:29:52.349 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.98
+ 2016-11-22 09:29:52.351 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.08
+ 2016-11-22 09:29:52.353 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.19
+ 2016-11-22 09:29:52.354 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.24
+ 2016-11-22 09:29:52.362 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.27
+ 2016-11-22 09:29:52.364 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.3
+ 2016-11-22 09:29:52.365 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.33
+ 2016-11-22 09:29:52.366 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.36
+ 2016-11-22 09:29:52.370 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.4
+ 2016-11-22 09:29:52.375 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.62
+ 2016-11-22 09:29:52.375 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.51
+ 2016-11-22 09:29:52.378 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.73
+ 2016-11-22 09:29:52.379 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.85
+ 2016-11-22 09:29:52.381 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3610.79
+ 2016-11-22 09:29:52.386 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3611.73
+ 2016-11-22 09:29:52.387 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3612.6
+ 2016-11-22 09:29:52.390 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3613.46
+ 2016-11-22 09:29:52.390 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3614.32
+ 2016-11-22 09:29:52.392 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3615.18
+ 2016-11-22 09:29:52.400 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3616.04
+ 2016-11-22 09:29:52.407 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3616.89
+ 2016-11-22 09:29:52.411 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3617.75
+ 2016-11-22 09:29:52.415 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3618.62
+ 2016-11-22 09:29:52.421 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3619.48
+ 2016-11-22 09:29:52.425 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3620.35
+ 2016-11-22 09:29:52.426 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3621.19
+ 2016-11-22 09:29:52.427 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3622.03
+ 2016-11-22 09:29:52.430 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3622.88
+ 2016-11-22 09:29:52.430 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3623.72
+ 2016-11-22 09:29:52.432 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3624.57
+ 2016-11-22 09:29:52.437 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3625.4
+ 2016-11-22 09:29:52.439 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3626.11
+ 2016-11-22 09:29:52.441 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3626.81
+ 2016-11-22 09:29:52.442 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3627.5
+ 2016-11-22 09:29:52.444 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3628.17
+ 2016-11-22 09:29:52.449 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3628.83
+ 2016-11-22 09:29:52.452 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3629.48
+ 2016-11-22 09:29:52.453 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3630.08
+ 2016-11-22 09:39:31.703 [main] INFO  o.e.jetty.util.log - Logging initialized @1804ms
+ 2016-11-22 09:39:31.784 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 09:39:31.791 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 09:39:31.805 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 09:39:31.833 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:39:31.834 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 09:39:31.842 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 09:39:31.986 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:39:32.048 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 09:39:32.297 [cluster-ClusterId{value='5833a1d36f6a692790c6f8d0', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15098}] to 139.196.235.75:27017
+ 2016-11-22 09:39:32.302 [cluster-ClusterId{value='5833a1d36f6a692790c6f8d0', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=4401249}
+ 2016-11-22 09:39:32.362 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15099}] to 139.196.235.75:27017
+ 2016-11-22 09:39:32.473 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:39:32.538 [cluster-ClusterId{value='5833a1d46f6a692790c6f8d1', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15100}] to 139.196.235.75:27017
+ 2016-11-22 09:39:32.546 [cluster-ClusterId{value='5833a1d46f6a692790c6f8d1', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=7859795}
+ 2016-11-22 09:39:33.133 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/find (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 09:39:33.134 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 09:39:33.135 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@351f2244{/,null,AVAILABLE}
+ 2016-11-22 09:39:33.141 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 09:39:33.141 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 09:39:33.146 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@20011bf{/admin,null,AVAILABLE}
+ 2016-11-22 09:39:33.160 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:39:33.161 [main] INFO  o.e.j.server.Server - Started @3263ms
+ 2016-11-22 09:39:44.758 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3590.83
+ 2016-11-22 09:39:44.769 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3591.99
+ 2016-11-22 09:39:44.769 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3592.89
+ 2016-11-22 09:39:44.771 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3593.29
+ 2016-11-22 09:39:44.774 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3591.44
+ 2016-11-22 09:39:44.777 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3592.47
+ 2016-11-22 09:39:44.807 [dw-34 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:15101}] to 139.196.235.75:27017
+ 2016-11-22 09:39:44.816 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3593.66
+ 2016-11-22 09:39:44.817 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.01
+ 2016-11-22 09:39:44.823 [dw-33 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:8, serverValue:15105}] to 139.196.235.75:27017
+ 2016-11-22 09:39:44.823 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.65
+ 2016-11-22 09:39:44.823 [dw-36 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:15103}] to 139.196.235.75:27017
+ 2016-11-22 09:39:44.823 [dw-32 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:15102}] to 139.196.235.75:27017
+ 2016-11-22 09:39:44.828 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.9
+ 2016-11-22 09:39:44.830 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.34
+ 2016-11-22 09:39:44.831 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3594.91
+ 2016-11-22 09:39:44.832 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.42
+ 2016-11-22 09:39:44.833 [dw-21 - POST /data/add] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:15104}] to 139.196.235.75:27017
+ 2016-11-22 09:39:44.833 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.71
+ 2016-11-22 09:39:44.832 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.43
+ 2016-11-22 09:39:44.839 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.13
+ 2016-11-22 09:39:44.839 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.53
+ 2016-11-22 09:39:44.840 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3596.96
+ 2016-11-22 09:39:44.842 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.15
+ 2016-11-22 09:39:44.843 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3595.68
+ 2016-11-22 09:39:44.848 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.89
+ 2016-11-22 09:39:44.850 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.15
+ 2016-11-22 09:39:44.852 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.71
+ 2016-11-22 09:39:44.853 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.57
+ 2016-11-22 09:39:44.854 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.32
+ 2016-11-22 09:39:44.842 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3597.34
+ 2016-11-22 09:39:44.853 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.06
+ 2016-11-22 09:39:44.863 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.13
+ 2016-11-22 09:39:44.867 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.29
+ 2016-11-22 09:39:44.869 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.98
+ 2016-11-22 09:39:44.869 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3598.81
+ 2016-11-22 09:39:44.870 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.43
+ 2016-11-22 09:39:44.871 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.11
+ 2016-11-22 09:39:44.876 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.25
+ 2016-11-22 09:39:44.876 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.9
+ 2016-11-22 09:39:44.880 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.52
+ 2016-11-22 09:39:44.880 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.39
+ 2016-11-22 09:39:44.884 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.64
+ 2016-11-22 09:39:44.885 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.77
+ 2016-11-22 09:39:44.889 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3599.67
+ 2016-11-22 09:39:44.907 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.0
+ 2016-11-22 09:39:44.907 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3600.89
+ 2016-11-22 09:39:44.910 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.12
+ 2016-11-22 09:39:44.912 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.67
+ 2016-11-22 09:39:44.943 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.57
+ 2016-11-22 09:39:44.945 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.35
+ 2016-11-22 09:39:44.946 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.36
+ 2016-11-22 09:39:44.955 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.45
+ 2016-11-22 09:39:44.958 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.92
+ 2016-11-22 09:39:44.959 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.1
+ 2016-11-22 09:39:44.965 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.46
+ 2016-11-22 09:39:44.969 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.26
+ 2016-11-22 09:39:45.027 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.69
+ 2016-11-22 09:39:45.029 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.88
+ 2016-11-22 09:39:45.030 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.13
+ 2016-11-22 09:39:45.032 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.28
+ 2016-11-22 09:39:45.048 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.4
+ 2016-11-22 09:39:45.060 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3602.54
+ 2016-11-22 09:39:45.063 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.7
+ 2016-11-22 09:39:45.072 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.24
+ 2016-11-22 09:39:45.089 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.47
+ 2016-11-22 09:39:45.103 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.84
+ 2016-11-22 09:39:45.104 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.62
+ 2016-11-22 09:39:45.122 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3601.77
+ 2016-11-22 09:39:45.132 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.9
+ 2016-11-22 09:39:45.137 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.55
+ 2016-11-22 09:39:45.138 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.97
+ 2016-11-22 09:39:45.164 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.27
+ 2016-11-22 09:39:45.191 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.16
+ 2016-11-22 09:39:45.199 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3603.77
+ 2016-11-22 09:39:45.216 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.28
+ 2016-11-22 09:39:45.218 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.03
+ 2016-11-22 09:39:45.230 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.29
+ 2016-11-22 09:39:45.237 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.3
+ 2016-11-22 09:39:45.245 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.3
+ 2016-11-22 09:39:45.274 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.52
+ 2016-11-22 09:39:45.292 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.34
+ 2016-11-22 09:39:45.304 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.59
+ 2016-11-22 09:39:45.323 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.44
+ 2016-11-22 09:39:45.340 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.67
+ 2016-11-22 09:39:45.347 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.56
+ 2016-11-22 09:39:45.356 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.56
+ 2016-11-22 09:39:45.359 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.83
+ 2016-11-22 09:39:45.361 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.56
+ 2016-11-22 09:39:45.364 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.56
+ 2016-11-22 09:39:45.370 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.83
+ 2016-11-22 09:39:45.371 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.75
+ 2016-11-22 09:39:45.374 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.88
+ 2016-11-22 09:39:45.376 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.83
+ 2016-11-22 09:39:45.383 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3604.99
+ 2016-11-22 09:39:45.387 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.387 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.33
+ 2016-11-22 09:39:45.391 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.392 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.398 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.401 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.410 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.413 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.47
+ 2016-11-22 09:39:45.432 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.437 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.444 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.446 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.447 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.48
+ 2016-11-22 09:39:45.451 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.16
+ 2016-11-22 09:39:45.459 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.459 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.464 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.472 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.475 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.481 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.49
+ 2016-11-22 09:39:45.494 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.498 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.504 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.510 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.510 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.528 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.536 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.540 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.541 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.541 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.5
+ 2016-11-22 09:39:45.556 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.564 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.53
+ 2016-11-22 09:39:45.564 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.51
+ 2016-11-22 09:39:45.565 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.53
+ 2016-11-22 09:39:45.570 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.59
+ 2016-11-22 09:39:45.574 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.52
+ 2016-11-22 09:39:45.587 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.52
+ 2016-11-22 09:39:45.589 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.67
+ 2016-11-22 09:39:45.590 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.53
+ 2016-11-22 09:39:45.593 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.52
+ 2016-11-22 09:39:45.599 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.602 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.604 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.614 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.615 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.619 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.77
+ 2016-11-22 09:39:45.628 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.628 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.630 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.630 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.76
+ 2016-11-22 09:39:45.633 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.640 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.78
+ 2016-11-22 09:39:45.647 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.653 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.8
+ 2016-11-22 09:39:45.658 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.8
+ 2016-11-22 09:39:45.660 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.81
+ 2016-11-22 09:39:45.662 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.81
+ 2016-11-22 09:39:45.663 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.81
+ 2016-11-22 09:39:45.665 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.8
+ 2016-11-22 09:39:45.671 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.81
+ 2016-11-22 09:39:45.675 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.676 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.79
+ 2016-11-22 09:39:45.682 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.689 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.692 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.692 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.693 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.82
+ 2016-11-22 09:39:45.697 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.706 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.707 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.709 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.711 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.713 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.84
+ 2016-11-22 09:39:45.723 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.84
+ 2016-11-22 09:39:45.723 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.83
+ 2016-11-22 09:39:45.726 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.84
+ 2016-11-22 09:39:45.726 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.84
+ 2016-11-22 09:39:45.731 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.86
+ 2016-11-22 09:39:45.738 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3605.94
+ 2016-11-22 09:39:45.739 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.03
+ 2016-11-22 09:39:45.740 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:39:45.743 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:39:45.746 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.08
+ 2016-11-22 09:39:45.749 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.753 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.758 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.763 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.763 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.765 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.09
+ 2016-11-22 09:39:45.769 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:39:45.776 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:39:45.777 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.1
+ 2016-11-22 09:39:45.781 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:39:45.791 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:39:45.792 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:39:45.792 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:39:45.795 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:39:45.795 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.11
+ 2016-11-22 09:39:45.804 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:39:45.804 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:39:45.808 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:39:45.809 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.12
+ 2016-11-22 09:39:45.816 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.821 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.822 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.828 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:39:45.830 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.830 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.833 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.14
+ 2016-11-22 09:39:45.833 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:39:45.841 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.24
+ 2016-11-22 09:39:45.844 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.16
+ 2016-11-22 09:39:45.846 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.44
+ 2016-11-22 09:39:45.846 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.32
+ 2016-11-22 09:39:45.851 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.59
+ 2016-11-22 09:39:45.854 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.15
+ 2016-11-22 09:39:45.861 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.2
+ 2016-11-22 09:39:45.864 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.17
+ 2016-11-22 09:39:45.867 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.66
+ 2016-11-22 09:39:45.870 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.25
+ 2016-11-22 09:39:45.875 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.8
+ 2016-11-22 09:39:45.875 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.73
+ 2016-11-22 09:39:45.876 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.97
+ 2016-11-22 09:39:45.878 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.1
+ 2016-11-22 09:39:45.880 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.12
+ 2016-11-22 09:39:45.880 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.87
+ 2016-11-22 09:39:45.887 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.15
+ 2016-11-22 09:39:45.888 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.3
+ 2016-11-22 09:39:45.890 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.17
+ 2016-11-22 09:39:45.891 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.19
+ 2016-11-22 09:39:45.891 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.22
+ 2016-11-22 09:39:45.895 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.41
+ 2016-11-22 09:39:45.924 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.52
+ 2016-11-22 09:39:45.938 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.6
+ 2016-11-22 09:39:45.942 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.63
+ 2016-11-22 09:39:45.959 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.68
+ 2016-11-22 09:39:45.964 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.65
+ 2016-11-22 09:39:45.971 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.74
+ 2016-11-22 09:39:45.976 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.76
+ 2016-11-22 09:39:45.985 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.84
+ 2016-11-22 09:39:45.990 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.79
+ 2016-11-22 09:39:45.990 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.81
+ 2016-11-22 09:39:45.993 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.71
+ 2016-11-22 09:39:46.012 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3606.13
+ 2016-11-22 09:39:46.019 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.88
+ 2016-11-22 09:39:46.022 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.9
+ 2016-11-22 09:39:46.028 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.93
+ 2016-11-22 09:39:46.040 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3607.96
+ 2016-11-22 09:39:46.043 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.0
+ 2016-11-22 09:39:46.047 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.05
+ 2016-11-22 09:39:46.056 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.03
+ 2016-11-22 09:39:46.059 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.07
+ 2016-11-22 09:39:46.063 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.1
+ 2016-11-22 09:39:46.071 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.13
+ 2016-11-22 09:39:46.075 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.23
+ 2016-11-22 09:39:46.079 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.33
+ 2016-11-22 09:39:46.087 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.56
+ 2016-11-22 09:39:46.088 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.44
+ 2016-11-22 09:39:46.095 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.78
+ 2016-11-22 09:39:46.108 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.89
+ 2016-11-22 09:39:46.112 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.68
+ 2016-11-22 09:39:46.113 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.93
+ 2016-11-22 09:39:46.116 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.0
+ 2016-11-22 09:39:46.122 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3608.97
+ 2016-11-22 09:39:46.126 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.02
+ 2016-11-22 09:39:46.129 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.05
+ 2016-11-22 09:39:46.132 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.09
+ 2016-11-22 09:39:46.143 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.29
+ 2016-11-22 09:39:46.144 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.18
+ 2016-11-22 09:39:46.146 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.61
+ 2016-11-22 09:39:46.147 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.4
+ 2016-11-22 09:39:46.158 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.73
+ 2016-11-22 09:39:46.159 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3609.5
+ 2016-11-22 09:39:46.160 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3610.67
+ 2016-11-22 09:39:46.161 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3611.56
+ 2016-11-22 09:39:46.163 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3612.42
+ 2016-11-22 09:39:46.164 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3613.28
+ 2016-11-22 09:39:46.173 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3614.14
+ 2016-11-22 09:39:46.174 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3615.0
+ 2016-11-22 09:39:46.176 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3615.87
+ 2016-11-22 09:39:46.177 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3616.73
+ 2016-11-22 09:39:46.181 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3618.45
+ 2016-11-22 09:39:46.191 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3617.58
+ 2016-11-22 09:39:46.191 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3619.31
+ 2016-11-22 09:39:46.193 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3621.87
+ 2016-11-22 09:39:46.195 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3620.18
+ 2016-11-22 09:39:46.195 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3621.03
+ 2016-11-22 09:39:46.198 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3623.56
+ 2016-11-22 09:39:46.200 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3622.72
+ 2016-11-22 09:39:46.208 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3624.4
+ 2016-11-22 09:39:46.209 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3625.24
+ 2016-11-22 09:39:46.211 [dw-36 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3627.34
+ 2016-11-22 09:39:46.211 [dw-31 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3625.95
+ 2016-11-22 09:39:46.214 [dw-34 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3626.64
+ 2016-11-22 09:39:46.215 [dw-22 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3628.07
+ 2016-11-22 09:39:46.239 [dw-32 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3628.78
+ 2016-11-22 09:39:46.241 [dw-33 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3629.42
+ 2016-11-22 09:39:46.243 [dw-21 - POST /data/add] INFO  i.j.u.h.r.GenDataAddUtil - add  3630.03
+ 2016-11-22 09:46:32.552 [main] INFO  o.e.jetty.util.log - Logging initialized @1778ms
+ 2016-11-22 09:46:32.640 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 09:46:32.648 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 09:46:32.661 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 09:46:32.688 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:46:32.690 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 09:46:32.697 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 09:46:32.836 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:46:32.894 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 09:46:33.134 [cluster-ClusterId{value='5833a3786f6a690da4979550', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15106}] to 139.196.235.75:27017
+ 2016-11-22 09:46:33.137 [cluster-ClusterId{value='5833a3786f6a690da4979550', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=2987972}
+ 2016-11-22 09:46:33.187 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15107}] to 139.196.235.75:27017
+ 2016-11-22 09:46:33.273 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:46:33.336 [cluster-ClusterId{value='5833a3796f6a690da4979551', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15108}] to 139.196.235.75:27017
+ 2016-11-22 09:46:33.347 [cluster-ClusterId{value='5833a3796f6a690da4979551', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=10562561}
+ 2016-11-22 09:46:33.869 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/findone (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 09:46:33.870 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 09:46:33.872 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@6240651f{/,null,AVAILABLE}
+ 2016-11-22 09:46:33.877 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 09:46:33.877 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 09:46:33.882 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@68577ba8{/admin,null,AVAILABLE}
+ 2016-11-22 09:46:33.894 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:46:33.894 [main] INFO  o.e.j.server.Server - Started @3121ms
+ 2016-11-22 09:47:00.262 [main] INFO  o.e.jetty.util.log - Logging initialized @1812ms
+ 2016-11-22 09:47:00.390 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2016-11-22 09:47:00.402 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2016-11-22 09:47:00.418 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2016-11-22 09:47:00.445 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:47:00.447 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2016-11-22 09:47:00.454 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2016-11-22 09:47:00.599 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:47:00.661 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2016-11-22 09:47:00.921 [cluster-ClusterId{value='5833a3946f6a692908c71b34', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:15109}] to 139.196.235.75:27017
+ 2016-11-22 09:47:00.927 [cluster-ClusterId{value='5833a3946f6a692908c71b34', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=5005250}
+ 2016-11-22 09:47:00.975 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:15110}] to 139.196.235.75:27017
+ 2016-11-22 09:47:01.051 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2016-11-22 09:47:01.105 [cluster-ClusterId{value='5833a3956f6a692908c71b35', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:15111}] to 139.196.235.75:27017
+ 2016-11-22 09:47:01.111 [cluster-ClusterId{value='5833a3956f6a692908c71b35', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 0, 12]}, minWireVersion=0, maxWireVersion=3, maxDocumentSize=16777216, roundTripTimeNanos=5807994}
+ 2016-11-22 09:47:01.661 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    POST    /data/add (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/findone (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2016-11-22 09:47:01.665 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2016-11-22 09:47:01.667 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@6240651f{/,null,AVAILABLE}
+ 2016-11-22 09:47:01.676 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2016-11-22 09:47:01.677 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2016-11-22 09:47:01.683 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@68577ba8{/admin,null,AVAILABLE}
+ 2016-11-22 09:47:01.703 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@41fe9859{HTTP/1.1}{0.0.0.0:8899}
+ 2016-11-22 09:47:01.704 [main] INFO  o.e.j.server.Server - Started @3256ms
+ 

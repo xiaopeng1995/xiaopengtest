@@ -3,19 +3,19 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/Program Files/gradle-2.13" />
-        <option name="gradleJvm" value="1.8" />
+        <option name="gradleHome" value="G:/gradle-2.14" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/J1st-Delete-Utils" />
             <option value="$PROJECT_DIR$/J1st-Demo" />
+            <option value="$PROJECT_DIR$/J1st-Gen-Data" />
             <option value="$PROJECT_DIR$/J1st-Mongodb" />
           </set>
         </option>
-        <option name="useAutoImport" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
