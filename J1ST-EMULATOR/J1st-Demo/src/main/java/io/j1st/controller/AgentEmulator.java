@@ -116,7 +116,7 @@ public class AgentEmulator {
             //if(a++==4000) break;
         }
 
-        // quartz任务
+//        // quartz任务
         Properties pros = new Properties();
         pros.setProperty("org.quartz.threadPool.threadCount", quartzConfig.getString("org.quartz.threadPool.threadCount"));
         Scheduler scheduler = new StdSchedulerFactory(pros).getScheduler();

@@ -36,7 +36,7 @@ public class UpstreamJob implements Job {
             if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
                 try {
                     List<Stream> stream = null;
-                    stream = MqttUpstreamEntity.getInstance(agentId,Registry.INSTANCE.getType().get(agentId));
+                    stream = MqttUpstreamEntity.getInstance(agentId, Registry.INSTANCE.getType().get(agentId));
                     mqttConnThread.sendMessage(topic, JsonUtils.OBJECT_MAPPER.writeValueAsString(stream));
                     logger.debug("发送的数据为：" + JsonUtils.OBJECT_MAPPER.writeValueAsString(stream));
                 } catch (JsonProcessingException e) {
@@ -57,7 +57,7 @@ public class UpstreamJob implements Job {
      * @param agentId Agent Id
      */
     public static String getTopic(String agentId) {
-      //  return "agents/" + agentId + "/upstream";
+        //     return "agents/" + agentId + "/upstream";
         return "agents/" + agentId + "/ems_upload";
     }
 
