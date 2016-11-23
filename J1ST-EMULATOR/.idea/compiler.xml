@@ -23,8 +23,8 @@
       <module name="J1st-Delete-Utils_test" target="1.8" />
       <module name="J1st-Demo_main" target="1.8" />
       <module name="J1st-Demo_test" target="1.8" />
-      <module name="J1st-Gen-Data_main" target="1.5" />
-      <module name="J1st-Gen-Data_test" target="1.5" />
+      <module name="J1st-Gen-Data_main" target="1.8" />
+      <module name="J1st-Gen-Data_test" target="1.8" />
       <module name="J1st-Mongodb_main" target="1.8" />
       <module name="J1st-Mongodb_test" target="1.8" />
     </bytecodeTargetLevel>

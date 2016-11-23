@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":J1st-Gen-Data:main" external.linked.project.path="$MODULE_DIR$/../../../J1st-Gen-Data" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="j1ST-EMULATOR" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+<module external.linked.project.id=":J1st-Gen-Data:main" external.linked.project.path="$MODULE_DIR$/../../../J1st-Gen-Data" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="j1ST-EMULATOR" external.system.module.type="sourceSet" external.system.module.version="1.0.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../../J1st-Gen-Data/build/classes/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../J1st-Gen-Data/src/main">

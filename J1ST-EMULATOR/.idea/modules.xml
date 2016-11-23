@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo.iml" group="J1st-Demo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo_main.iml" group="J1st-Demo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Demo/J1st-Demo_test.iml" group="J1st-Demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data.iml" group="J1st-Gen-Data" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data_main.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data_main.iml" group="J1st-Gen-Data" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data_test.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Gen-Data/J1st-Gen-Data_test.iml" group="J1st-Gen-Data" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/J1st-Mongodb/J1st-Mongodb.iml" filepath="$PROJECT_DIR$/.idea/modules/J1st-Mongodb/J1st-Mongodb.iml" group="J1st-Mongodb" />

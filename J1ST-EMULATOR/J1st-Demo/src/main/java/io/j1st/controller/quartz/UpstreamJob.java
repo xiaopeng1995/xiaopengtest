@@ -6,6 +6,8 @@ import io.j1st.controller.mqtt.MqttConnThread;
 import io.j1st.controller.entity.Registry;
 import io.j1st.controller.util.JsonUtils;
 import io.j1st.storage.entity.Stream;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -19,7 +21,8 @@ import java.util.Set;
  * Upstream Job
  */
 public class UpstreamJob implements Job {
-    Logger logger= LoggerFactory.getLogger(UpstreamJob.class);
+    Logger logger = LoggerFactory.getLogger(UpstreamJob.class);
+
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         // mqtt topic
@@ -27,14 +30,15 @@ public class UpstreamJob implements Job {
         Set<String> agentIds = Registry.INSTANCE.getSession().keySet();
         MqttConnThread mqttConnThread;
         for (String agentId : agentIds) {
-            logger.debug("agent:{} 上发数据",agentId);
-            mqttConnThread=Registry.INSTANCE.getSession().get(agentId);
+            logger.debug("agent:{} 上发数据", agentId);
+            mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topic = getTopic(agentId);
-            if (mqttConnThread!=null && mqttConnThread.getMqttClient().isConnected()) {
+            if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
                 try {
-                    List<Stream> stream= MqttUpstreamEntity.getInstance(agentId);
+                    List<Stream> stream = null;
+                    stream = MqttUpstreamEntity.getInstance(agentId,Registry.INSTANCE.getType().get(agentId));
                     mqttConnThread.sendMessage(topic, JsonUtils.OBJECT_MAPPER.writeValueAsString(stream));
-                    logger.debug("发送的数据为："+JsonUtils.OBJECT_MAPPER.writeValueAsString(stream));
+                    logger.debug("发送的数据为：" + JsonUtils.OBJECT_MAPPER.writeValueAsString(stream));
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
                 }
@@ -53,7 +57,7 @@ public class UpstreamJob implements Job {
      * @param agentId Agent Id
      */
     public static String getTopic(String agentId) {
-        return "agents/"+agentId+"/upstream";
+        return "agents/" + agentId + "/upstream";
     }
 
 }

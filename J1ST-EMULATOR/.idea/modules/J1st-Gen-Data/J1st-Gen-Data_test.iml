@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":J1st-Gen-Data:test" external.linked.project.path="$MODULE_DIR$/../../../J1st-Gen-Data" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="j1ST-EMULATOR" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+<module external.linked.project.id=":J1st-Gen-Data:test" external.linked.project.path="$MODULE_DIR$/../../../J1st-Gen-Data" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="j1ST-EMULATOR" external.system.module.type="sourceSet" external.system.module.version="1.0.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output-test url="file://$MODULE_DIR$/../../../J1st-Gen-Data/build/classes/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../J1st-Gen-Data/src/test">
@@ -29,8 +29,8 @@
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: c3p0:c3p0:0.9.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.2" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="J1st-Gen-Data_main" />
 </module>

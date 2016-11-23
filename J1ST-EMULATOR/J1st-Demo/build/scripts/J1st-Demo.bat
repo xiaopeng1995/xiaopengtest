@@ -8,13 +8,13 @@
 @rem Set local scope for the variables with windows NT shell
 if "%OS%"=="Windows_NT" setlocal
 
-@rem Add default JVM options here. You can also use JAVA_OPTS and J_ST_DEMO_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS=
-
 set DIRNAME=%~dp0
 if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
+
+@rem Add default JVM options here. You can also use JAVA_OPTS and J1ST_DEMO_OPTS to pass JVM options to this script.
+set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -46,7 +46,7 @@ echo location of your Java installation.
 goto fail
 
 :init
-@rem Get command-line arguments, handling Windowz variants
+@rem Get command-line arguments, handling Windows variants
 
 if not "%OS%" == "Windows_NT" goto win9xME_args
 if "%@eval[2+2]" == "4" goto 4NT_args
@@ -72,16 +72,16 @@ set CMD_LINE_ARGS=%$
 set CLASSPATH=%APP_HOME%\lib\J1st-Demo-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\commons-lang3-3.4.jar;%APP_HOME%\lib\commons-configuration-1.10.jar;%APP_HOME%\lib\slf4j-api-1.7.13.jar;%APP_HOME%\lib\logback-core-1.1.3.jar;%APP_HOME%\lib\logback-classic-1.1.3.jar;%APP_HOME%\lib\joda-time-2.9.2.jar;%APP_HOME%\lib\jackson-core-2.7.1.jar;%APP_HOME%\lib\jackson-databind-2.7.1.jar;%APP_HOME%\lib\commons-codec-1.10.jar;%APP_HOME%\lib\quartz-2.2.3.jar;%APP_HOME%\lib\quartz-jobs-2.2.3.jar;%APP_HOME%\lib\J1st-Mongodb-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.paho.client.mqttv3-1.0.2.jar;%APP_HOME%\lib\org.eclipse.paho.client.mqttv3.test-1.0.2.jar;%APP_HOME%\lib\commons-lang-2.6.jar;%APP_HOME%\lib\commons-logging-1.1.1.jar;%APP_HOME%\lib\jackson-annotations-2.7.0.jar;%APP_HOME%\lib\c3p0-0.9.1.1.jar;%APP_HOME%\lib\mongodb-driver-3.2.2.jar;%APP_HOME%\lib\guava-18.0.jar;%APP_HOME%\lib\mongodb-driver-core-3.2.2.jar;%APP_HOME%\lib\bson-3.2.2.jar
 
 @rem Execute J1st-Demo
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %J_ST_DEMO_OPTS%  -classpath "%CLASSPATH%" io.j1st.controller.AgentEmulator %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %J1ST_DEMO_OPTS%  -classpath "%CLASSPATH%" io.j1st.controller.AgentEmulator %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
 if "%ERRORLEVEL%"=="0" goto mainEnd
 
 :fail
-rem Set variable J_ST_DEMO_EXIT_CONSOLE if you need the _script_ return code instead of
+rem Set variable J1ST_DEMO_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
-if  not "" == "%J_ST_DEMO_EXIT_CONSOLE%" exit 1
+if  not "" == "%J1ST_DEMO_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd

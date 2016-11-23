@@ -51,7 +51,7 @@ public class AgentEmulator {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
-            quartzConfig=new PropertiesConfiguration(args[3]);
+            quartzConfig = new PropertiesConfiguration(args[3]);
 
         } else {
             productIdConfig = new PropertiesConfiguration("config/product.properties");
@@ -65,14 +65,21 @@ public class AgentEmulator {
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
         MqttUpstreamEntity mqttUpstreamEntity = new MqttUpstreamEntity(mogo);
-        List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
-
+        //  List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
+        List<Agent> agents = mogo.getAgentsByProductId(
+                new ObjectId(productIdConfig.getString("batP_product_id")),
+                new ObjectId(productIdConfig.getString("pVPower_product_id")),
+                new ObjectId(productIdConfig.getString("load_product_id")),
+                new ObjectId(productIdConfig.getString("grid_product_id")),
+                new ObjectId(productIdConfig.getString("car_product_id")));
         // Mqtt
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
         //Agent agent= agents.get(0);
         for (Agent agent : agents) {
+            System.out.println("agent.getId()" + agent.getId());
+            System.out.println(agent.getProductId());
             mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agent.getId().toHexString(), persistence);
             String agentId = agent.getId().toHexString();
             String token = agent.getToken();
@@ -82,14 +89,36 @@ public class AgentEmulator {
             MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options);
             //添加新线程到线程池
             Registry.INSTANCE.startThread(mqttConnThread);
+            String type = null;
+                if(agent.getProductId().toString().equals(productIdConfig.getString("batP_product_id")))
+                {
+                    type = "batP";
+                }
+                else if(agent.getProductId().toString().equals(productIdConfig.getString("load_product_id")))
+                {
+                    type = "load";
+                }
+                else if(agent.getProductId().toString().equals(productIdConfig.getString("grid_product_id")))
+                {
+                    type = "grid";
+                }
+                else if(agent.getProductId().toString().equals(productIdConfig.getString("car_product_id")))
+                {
+                    type = "car";
+                }
+                else if(agent.getProductId().toString().equals(productIdConfig.getString("pVPower_product_id")))
+                {
+                    type = "pVP";
+                }
             //保存mqtt连接信息
             Registry.INSTANCE.saveSession(agent.getId().toHexString(), mqttConnThread);
+            Registry.INSTANCE.saveType(agent.getId().toHexString(), type);
             //if(a++==4000) break;
         }
 
         // quartz任务
-        Properties pros=new Properties();
-        pros.setProperty("org.quartz.threadPool.threadCount",quartzConfig.getString("org.quartz.threadPool.threadCount"));
+        Properties pros = new Properties();
+        pros.setProperty("org.quartz.threadPool.threadCount", quartzConfig.getString("org.quartz.threadPool.threadCount"));
         Scheduler scheduler = new StdSchedulerFactory(pros).getScheduler();
         Trigger trigger = newTrigger()
                 .withIdentity("j1st_trigger", "J1st_trigger")

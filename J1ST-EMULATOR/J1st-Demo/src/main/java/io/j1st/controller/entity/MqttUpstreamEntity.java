@@ -23,9 +23,9 @@ public class MqttUpstreamEntity {
     }
 
     // upstream object
-    public static List<Stream> getInstance(String agentId){
+    public static List<Stream> getInstance(String agentId,String type){
         List<Stream> streams=new ArrayList<>();
-        streams.add(getAgentStream(agentId));
+        streams.add(getAgentStream(agentId,type));
         //update device
         //streams.add(getDeviceStream(agentId));
         //insert device
@@ -34,7 +34,7 @@ public class MqttUpstreamEntity {
     }
 
     // agent stream
-    public static Stream getAgentStream(String agentId){
+    public static Stream getAgentStream(String agentId,String type){
         Stream agentStreams=new Stream();
 //        //agentStreams.setHwid(agentId);
         agentStreams.setType(DeviceType.AGENT);
@@ -46,18 +46,33 @@ public class MqttUpstreamEntity {
         String date = dateFormat.format( now );
         System.out.println(date);
         Document document = mongoStorage.findGendDataBytime(date,0);
-        map.put("PVPower",document.get("pVPower"));
-        map.put("EToday",document.get("eToday"));
-        map.put("Car1P",document.get("car1P"));
-        map.put("Car1SOC",document.get("car1SOC"));
-        map.put("Car2P",document.get("car2P"));
-        map.put("Car2SOC",document.get("car2SOC"));
-        map.put("BatP", document.get("batP"));
-        map.put("BatSOC", document.get("batSOC"));
-        map.put("PowerG", document.get("powerG"));
-        map.put("MeterG", document.get("meterG"));
-        map.put("PowerT", document.get("powerT"));
-        map.put("MeterT", document.get("meterT"));
+        if(type.equals("batP"))
+        {
+            map.put("BatP", document.get("batP"));
+            map.put("BatSOC", document.get("batSOC"));
+        }
+        else if(type.equals("load"))
+        {
+            map.put("PowerT", document.get("powerT"));
+            map.put("MeterT", document.get("meterT"));
+        }
+        else if(type.equals("grid"))
+        {
+            map.put("PowerG", document.get("powerG"));
+            map.put("MeterG", document.get("meterG"));
+        }
+        else if(type.equals("car"))
+        {
+            map.put("Car1P",document.get("car1P"));
+            map.put("Car1SOC",document.get("car1SOC"));
+            map.put("Car2P",document.get("car2P"));
+            map.put("Car2SOC",document.get("car2SOC"));
+        }
+        else if(type.equals("pVP"))
+        {
+            map.put("PVPower",document.get("pVPower"));
+            map.put("EToday",document.get("eToday"));
+        }
         agentStreams.setValues(map);
         return agentStreams;
     }
