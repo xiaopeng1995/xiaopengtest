@@ -10,9 +10,10 @@ public class Stream {
     private String asn;
     private String dsn;
     private DeviceType type;
-    private long dtime;
+    private int direction;  //功率方向（0: none, 1: in , 2: out）储能侧和电网侧有此字段
+   // private long dtime;
     private String model;
-    private Map<String ,Object> values;
+    private Map<String, Object> values;
 
     public String getAsn() {
         return asn;
@@ -38,13 +39,13 @@ public class Stream {
         this.type = type;
     }
 
-    public long getDtime() {
-        return dtime;
-    }
-
-    public void setDtime(long dtime) {
-        this.dtime = dtime;
-    }
+//    public long getDtime() {
+//        return dtime;
+//    }
+//
+//    public void setDtime(long dtime) {
+//        this.dtime = dtime;
+//    }
 
     public String getModel() {
         return model;
@@ -60,5 +61,13 @@ public class Stream {
 
     public void setValues(Map<String, Object> values) {
         this.values = values;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
     }
 }

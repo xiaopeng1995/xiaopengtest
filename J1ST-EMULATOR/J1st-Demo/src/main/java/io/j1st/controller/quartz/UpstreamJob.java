@@ -57,7 +57,8 @@ public class UpstreamJob implements Job {
      * @param agentId Agent Id
      */
     public static String getTopic(String agentId) {
-        return "agents/" + agentId + "/upstream";
+      //  return "agents/" + agentId + "/upstream";
+        return "agents/" + agentId + "/ems_upload";
     }
 
 }
